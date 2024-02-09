@@ -5,11 +5,11 @@ export const Container = styled.View`
   justify-content: center;
   align-items: center;
 
-  background: ${({ theme }:any) => theme.COLORS.GRAY_600};
+  background: ${({ theme }) => theme.COLORS.GRAY_600};
 `
 
 export const LoadingIndicator = styled.ActivityIndicator.attrs(
-  ({ theme }:any ) =>
+  ({ theme } ) =>
     ({
      color: theme.COLORS.GRAY_200
     })
