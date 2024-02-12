@@ -10,14 +10,16 @@
   },
   "dependencies": {
     "@expo-google-fonts/roboto": "^0.2.3",
+    "@rocketseat/eslint-config": "^2.2.2",
+    "eslint": "^8.56.0",
     "expo": "~50.0.6",
     "expo-font": "~11.10.2",
     "expo-status-bar": "~1.11.1",
     "phosphor-react-native": "^2.0.0",
     "react": "18.2.0",
     "react-native": "0.73.4",
-    "styled-components": "^6.1.8",
-    "react-native-svg": "14.1.0"
+    "react-native-svg": "14.1.0",
+    "styled-components": "^6.1.8"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
