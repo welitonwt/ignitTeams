@@ -1,4 +1,5 @@
-import styled from "styled-components/native";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import styled from 'styled-components/native'
 
 export const Container = styled.View`
   width: 100%;
@@ -7,14 +8,14 @@ export const Container = styled.View`
 export const Title = styled.Text`
   text-align: center;
 
-  font-size: ${({ theme }:any ) => theme.FONT_SIZE.XL} ;
-  font-family: ${({ theme }:any ) => theme.FONT_FAMILY.BOLD} ;
-  color: ${({ theme }:any ) => theme.COLORS.WHITE} ;
+  font-size: ${({ theme }: any) => theme.FONT_SIZE.XL};
+  font-family: ${({ theme }: any) => theme.FONT_FAMILY.BOLD};
+  color: ${({ theme }: any) => theme.COLORS.WHITE};
 `
 export const Subtitle = styled.Text`
   text-align: center;
 
-  font-size: ${({ theme }:any ) => theme.FONT_SIZE.MD} ;
-  font-family: ${({ theme }:any ) => theme.FONT_FAMILY.REGULAR} ;
-  color: ${({ theme }:any ) => theme.COLORS.GRAY_300} ;
+  font-size: ${({ theme }: any) => theme.FONT_SIZE.MD};
+  font-family: ${({ theme }: any) => theme.FONT_FAMILY.REGULAR};
+  color: ${({ theme }: any) => theme.COLORS.GRAY_300};
 `

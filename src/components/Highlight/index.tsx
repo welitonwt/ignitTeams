@@ -5,16 +5,12 @@ type Props = {
   subtitle: string
 }
 
-export function Highlight({title, subtitle}: Props) {
+export function Highlight({ title, subtitle }: Props) {
   return (
     <Container>
-      <Title>
-        {title}
-      </Title>
+      <Title>{title}</Title>
 
-      <Subtitle>
-        {subtitle}        
-      </Subtitle>
+      <Subtitle>{subtitle}</Subtitle>
     </Container>
   )
 }
