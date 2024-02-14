@@ -10,6 +10,8 @@ import { FlatList } from 'react-native'
 
 import { ListEmpty } from '@components/ListEmpty'
 
+import { Button } from '@components/Button'
+
 export function Groups() {
   const [groups, setGroups] = useState<string[]>([])
 
@@ -28,7 +30,7 @@ export function Groups() {
         )}
       />
 
-      {/* <GroupCard title="Galera do Ignite" /> */}
+      <Button title="Criar Nova Turma" />
     </Container>
   )
 }
