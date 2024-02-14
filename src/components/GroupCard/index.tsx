@@ -1,5 +1,5 @@
 import { TouchableOpacityProps } from 'react-native'
-import { Container, Title, Icon } from './styled'
+import { Container, Title, Icon } from './styles'
 
 type Props = TouchableOpacityProps & {
   title: string
