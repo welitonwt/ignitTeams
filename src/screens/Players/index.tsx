@@ -1,4 +1,4 @@
-import { Container } from './styles'
+import { Container, Form } from './styles'
 
 import { Header } from '@components/Header'
 import { Highlight } from '@components/Highlight'
@@ -16,9 +16,10 @@ export function Players() {
         subtitle="adicione a galera e separe os times"
       />
 
-      <ButtonIcon />
-
-      <Input placeholder="Nome do participante" />
+      <Form>
+        <Input placeholder="Nome do participante" autoCorrect={false} />
+        <ButtonIcon icon="add" />
+      </Form>
 
       <Button title="Remover turma" type="SECONDARY" />
     </Container>
