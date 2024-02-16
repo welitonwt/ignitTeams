@@ -9,7 +9,9 @@ import { ThemeProvider } from 'styled-components'
 
 import theme from './src/styles/theme'
 
-import { NewGroup } from './src/screens/NewGroup'
+// import { Groups } from './src/screens/Groups'
+// import { NewGroup } from './src/screens/NewGroup'
+import { Players } from './src/screens/Players'
 
 import { Loading } from './src/components/Loading'
 
@@ -25,7 +27,7 @@ export default function App() {
         backgroundColor="transparent"
         translucent
       />
-      {fontsLoaded ? <NewGroup /> : <Loading />}
+      {fontsLoaded ? <Players /> : <Loading />}
     </ThemeProvider>
   )
 }

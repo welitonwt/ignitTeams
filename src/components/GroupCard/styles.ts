@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import styled from 'styled-components/native'
+import styled, { css } from 'styled-components/native'
 import { TouchableOpacity } from 'react-native'
 import { UsersThree } from 'phosphor-react-native'
 
@@ -18,9 +18,11 @@ export const Container = styled(TouchableOpacity)`
 `
 
 export const Title = styled.Text`
-  font-size: ${({ theme }: any) => theme.FONT_SIZE.MD};
-  color: ${({ theme }: any) => theme.COLORS.GRAY_200};
-  font-family: ${({ theme }: any) => theme.FONT_FAMILY.REGULAR};
+  ${({ theme }: any) => css`
+    font-size: ${theme.FONT_SIZE.MD};
+    color: ${theme.COLORS.GRAY_200};
+    font-family: ${theme.FONT_FAMILY.REGULAR};
+  `}
 `
 
 export const Icon = styled(UsersThree).attrs(({ theme }: any) => ({
