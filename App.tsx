@@ -5,13 +5,11 @@ import {
   Roboto_700Bold,
 } from '@expo-google-fonts/roboto'
 
-import { ThemeProvider } from 'styled-components'
+import { ThemeProvider } from 'styled-components/native'
 
 import theme from './src/styles/theme'
 
-// import { Groups } from './src/screens/Groups'
-// import { NewGroup } from './src/screens/NewGroup'
-import { Players } from './src/screens/Players'
+import { Groups } from './src/screens/Groups'
 
 import { Loading } from './src/components/Loading'
 
@@ -27,7 +25,7 @@ export default function App() {
         backgroundColor="transparent"
         translucent
       />
-      {fontsLoaded ? <Players /> : <Loading />}
+      {fontsLoaded ? <Groups /> : <Loading />}
     </ThemeProvider>
   )
 }

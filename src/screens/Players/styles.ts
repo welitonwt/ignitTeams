@@ -26,7 +26,7 @@ export const HeaderList = styled.View`
   align-items: center;
 `
 
-export const NumbersOfPlayers = styled.Text`
+export const NumberOfPlayers = styled.Text`
   margin-left: 12px;
   ${({ theme }: any) => css`
     color: ${({ theme }: any) => theme.COLORS.GRAY_200};
