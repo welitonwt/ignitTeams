@@ -10,6 +10,7 @@ export const Container = styled.View`
   justify-content: center;
   margin-top: 10px;
 `
+export const BackHome = styled.TouchableOpacity``
 
 export const Logo = styled.Image`
   width: 46px;
