@@ -20,7 +20,7 @@ export const Name = styled.Text`
   flex: 1;
 
   ${({ theme }: any) => css`
-    font-size: ${theme.FONT_SIZE.MD};
+    font-size: ${theme.FONT_SIZE.MD}px;
     font-family: ${theme.FONT_FAMILY.REGULAR};
     color: ${theme.COLORS.GRAY_200};
   `}

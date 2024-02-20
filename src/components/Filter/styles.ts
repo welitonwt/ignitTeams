@@ -30,7 +30,7 @@ export const Title = styled.Text`
   text-transform: uppercase;
   ${({ theme }: any) => css`
     font-family: ${theme.FONT_FAMILY.BOLD};
-    font-size: ${theme.FONT_SIZE.SM};
+    font-size: ${theme.FONT_SIZE.SM}px;
     color: ${theme.COLORS.WHITE};
   `}
 `
