@@ -30,7 +30,6 @@ export function Groups() {
           console.log(error)
         }
       }
-      console.log('cheguei porra')
       fetchGroups()
     }, []),
   )
@@ -44,7 +43,10 @@ export function Groups() {
         data={groups}
         keyExtractor={(item) => item}
         renderItem={({ item }) => <GroupCard title={item} />}
-        contentContainerStyle={groups.length === 0 && { flex: 1 }}
+        contentContainerStyle={
+          groups.length === 0 ? { flex: 1 } : { paddingBottom: 100 }
+        }
+        showsVerticalScrollIndicator={false}
         ListEmptyComponent={() => (
           <ListEmpty message="Que tal Cadrastar a primeira turma?" />
         )}

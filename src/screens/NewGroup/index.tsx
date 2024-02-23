@@ -8,17 +8,26 @@ import { Button } from '@components/Button'
 import { Input } from '@components/Input'
 import { useNavigation } from '@react-navigation/native'
 import { groupCreate } from '@storage/group/groupCreate'
+import { AppError } from '@utils/AppError'
+import { Alert } from 'react-native'
 
 export function NewGroup() {
   const navigation = useNavigation()
   const [groupName, setGroupName] = useState<string>('')
+
+  const buttonActive = groupName.trim().length === 0
 
   async function handleNew() {
     try {
       await groupCreate(groupName)
       navigation.navigate('players', { groupName })
     } catch (error) {
-      console.log(error)
+      if (error instanceof AppError) {
+        Alert.alert('Nova Turma', error.message)
+      } else {
+        Alert.alert('Nova  Turma', 'Não foi possível criar uma nova Turma.')
+        console.log(error)
+      }
     }
   }
   return (
@@ -40,6 +49,8 @@ export function NewGroup() {
           title="Criar"
           wide="WIDE"
           onPress={handleNew}
+          disabled={buttonActive}
+          active={buttonActive ? 'NOACTIVE' : ''}
         />
       </Content>
     </Container>
