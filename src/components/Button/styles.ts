@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components/native'
 
 export type ButtonTypeStyleProps = 'PRIMARY' | 'SECONDARY'
 export type ButtonStyleWide = 'WIDE' | ''
-export type ButtonActiveStyleProps = 'NOACTIVE' | ''
+export type ButtonActiveStyleProps = 'INACTIVE' | ''
 
 type Props = {
   type: ButtonTypeStyleProps
@@ -28,7 +28,7 @@ export const Container = styled(TouchableOpacity)<Props>`
   background-color: ${({ theme, type }: any) =>
     type === 'PRIMARY' ? theme.COLORS.GREEN_700 : theme.COLORS.RED_DARK};
 
-  opacity: ${({ active }: any) => (active === 'NOACTIVE' ? 0.3 : 1.0)};
+  opacity: ${({ active }: any) => (active === 'INACTIVE' ? 0.3 : 1.0)};
 `
 
 export const Title = styled.Text`

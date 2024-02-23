@@ -50,7 +50,7 @@ export function NewGroup() {
           wide="WIDE"
           onPress={handleNew}
           disabled={buttonActive}
-          active={buttonActive ? 'NOACTIVE' : ''}
+          active={buttonActive ? 'INACTIVE' : ''}
         />
       </Content>
     </Container>
