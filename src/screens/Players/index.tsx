@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-useless-catch */
 import { Alert, FlatList } from 'react-native'
 import { useRoute } from '@react-navigation/native'
@@ -15,7 +16,7 @@ import { Highlight } from '@components/Highlight'
 import { Input } from '@components/Input'
 import { ButtonIcon } from '@components/ButtonIcon'
 import { Filter } from '@components/Filter'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { PlayerCard } from '@components/PlayerCard'
 import { ListEmpty } from '@components/ListEmpty'
 import { Button } from '@components/Button'
@@ -48,6 +49,7 @@ export function Players() {
 
     try {
       await playerAddByGroup(newPLayer, groupName)
+      fetchPlayersByTeam()
     } catch (error) {
       if (error instanceof AppError) {
         Alert.alert('Nova pessoa', error.message)
@@ -70,6 +72,10 @@ export function Players() {
       )
     }
   }
+
+  useEffect(() => {
+    fetchPlayersByTeam()
+  }, [team])
 
   return (
     <Container>
@@ -108,9 +114,9 @@ export function Players() {
 
       <FlatList
         data={players}
-        keyExtractor={(item) => item}
+        keyExtractor={(item) => item.name}
         renderItem={({ item }) => (
-          <PlayerCard name={item} onRemove={() => {}} />
+          <PlayerCard name={item.name} onRemove={() => {}} />
         )}
         ListEmptyComponent={() => (
           <ListEmpty message="Não há pessoas nesse time. " />
