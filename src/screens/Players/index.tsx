@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-useless-catch */
-import { Alert, FlatList } from 'react-native'
+import { Alert, FlatList, TextInput } from 'react-native'
 import { useRoute } from '@react-navigation/native'
 
 import { Container, Form, HeaderList, NumberOfPlayers } from './styles'
@@ -16,7 +16,7 @@ import { Highlight } from '@components/Highlight'
 import { Input } from '@components/Input'
 import { ButtonIcon } from '@components/ButtonIcon'
 import { Filter } from '@components/Filter'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { PlayerCard } from '@components/PlayerCard'
 import { ListEmpty } from '@components/ListEmpty'
 import { Button } from '@components/Button'
@@ -34,6 +34,8 @@ export function Players() {
   const route = useRoute()
   const { groupName } = route.params as RouteParams
 
+  const newPlayerNameInputRef = useRef<TextInput>(null)
+
   async function handleAddPlayer() {
     if (newPlayerName.trim().length === 0) {
       return Alert.alert(
@@ -49,6 +51,10 @@ export function Players() {
 
     try {
       await playerAddByGroup(newPLayer, groupName)
+
+      newPlayerNameInputRef.current?.blur()
+
+      setNewPlayerName('')
       fetchPlayersByTeam()
     } catch (error) {
       if (error instanceof AppError) {
@@ -88,9 +94,13 @@ export function Players() {
 
       <Form>
         <Input
+          inputRef={newPlayerNameInputRef}
           onChangeText={setNewPlayerName}
+          value={newPlayerName}
           placeholder="Nome do participante"
           autoCorrect={false}
+          onSubmitEditing={handleAddPlayer}
+          returnKeyType="done"
         />
         <ButtonIcon icon="add" onPress={handleAddPlayer} />
       </Form>
